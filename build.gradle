@@ -24,10 +24,13 @@ repositories {
 }
 
 dependencies {
+    //모니터링이라고 한다
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     // Prometheus 전용 Micrometer 의존성 추가
     implementation 'io.micrometer:micrometer-registry-prometheus'
 
+    //h2 db에 적용 시키기
+    runtimeOnly 'com.h2database:h2'
 
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-web'
@@ -45,7 +48,7 @@ tasks.named('test') {
 }
 
 tasks.named('bootBuildImage') {
-    imageName = "urstory/my-spring-app:1.0"
+    imageName = "pjh399/todo:4.0"
     environment = [
             "BP_JVM_VERSION": "21"
     ]

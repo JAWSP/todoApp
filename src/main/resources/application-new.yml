@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    #얘는 컨테이너 안에서 접속할때의 url임
+    url: jdbc:mysql://mymymysql:3306/testdb?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    username: testuser
+    password: testpass
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 10
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+      jdbc.time_zone: Asia/Seoul
+server:
+  port: 8000
